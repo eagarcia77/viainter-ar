@@ -1,0 +1,47 @@
+[
+  {
+    "id": "entrada-principal",
+    "nombre": "Entrada Principal",
+    "categoria": "Orientación",
+    "lat": 18.08385,
+    "lng": -67.04907,
+    "descripcion": "Punto inicial sugerido para la orientación del Recinto de San Germán.",
+    "url": "https://viaintersg.org/index.html"
+  },
+  {
+    "id": "biblioteca",
+    "nombre": "Biblioteca",
+    "categoria": "Servicios Académicos",
+    "lat": 18.08415,
+    "lng": -67.04875,
+    "descripcion": "Ejemplo de punto académico. Ajusta estas coordenadas con la ubicación exacta del edificio.",
+    "url": "https://viaintersg.org/index.html"
+  },
+  {
+    "id": "admisiones",
+    "nombre": "Admisiones",
+    "categoria": "Servicios Estudiantiles",
+    "lat": 18.08355,
+    "lng": -67.04865,
+    "descripcion": "Ejemplo de oficina de servicio. Sustituye por la coordenada oficial del mapa actual.",
+    "url": "https://viaintersg.org/index.html"
+  },
+  {
+    "id": "centro-estudiantes",
+    "nombre": "Centro de Estudiantes",
+    "categoria": "Vida Universitaria",
+    "lat": 18.08395,
+    "lng": -67.04948,
+    "descripcion": "Espacio de apoyo y orientación estudiantil. Ajustar según el plano del recinto.",
+    "url": "https://viaintersg.org/index.html"
+  },
+  {
+    "id": "ucan-cetl",
+    "nombre": "UCAN / CETL",
+    "categoria": "Apoyo Académico",
+    "lat": 18.08365,
+    "lng": -67.04928,
+    "descripcion": "Punto demostrativo para integrar recursos de apoyo, capacitación y educación en línea.",
+    "url": "https://eagarcia77.github.io/CTEL-SG/"
+  }
+]

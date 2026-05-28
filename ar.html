@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Mapa AR | Vía Inter SG</title>
+  <meta name="description" content="Mapa de realidad aumentada para el Recinto de San Germán de la Universidad Interamericana de Puerto Rico." />
+
+  <!-- A-Frame + AR.js Location Based AR. Requiere HTTPS, cámara y permiso de ubicación. -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.js"></script>
+
+  <link rel="stylesheet" href="css/ar-styles.css" />
+</head>
+<body>
+  <main id="app-shell">
+    <section class="top-panel" aria-label="Panel de instrucciones">
+      <div class="brand-row">
+        <div class="brand-mark" aria-hidden="true">AR</div>
+        <div>
+          <h1>Mapa AR | Vía Inter SG</h1>
+          <p>Permite cámara y ubicación. Luego apunta tu celular hacia el campus para ver puntos de interés.</p>
+        </div>
+      </div>
+
+      <div class="actions-row">
+        <button id="btnLocate" type="button">Actualizar mi ubicación</button>
+        <a class="ghost-link" href="index.html">Volver al mapa</a>
+      </div>
+
+      <p id="status" class="status" role="status">Preparando experiencia de realidad aumentada...</p>
+    </section>
+
+    <section id="placesPanel" class="places-panel" aria-label="Puntos de interés cercanos">
+      <button id="togglePlaces" type="button" aria-expanded="false">Ver puntos de interés</button>
+      <div id="placesList" class="places-list" hidden></div>
+    </section>
+
+    <noscript>
+      <div class="noscript-warning">
+        Esta experiencia requiere JavaScript, cámara y geolocalización para funcionar.
+      </div>
+    </noscript>
+
+    <a-scene
+      id="arScene"
+      renderer="logarithmicDepthBuffer: true; alpha: true; antialias: true"
+      embedded
+      loading-screen="enabled: false"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: true"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+    >
+      <a-camera
+        id="camera"
+        gps-new-camera="gpsMinDistance: 1; simulateLatitude: 0; simulateLongitude: 0"
+        rotation-reader
+        look-controls-enabled="false"
+        wasd-controls-enabled="false"
+      >
+        <a-cursor
+          fuse="true"
+          fuse-timeout="1200"
+          raycaster="objects: .clickable"
+          material="color: #FED141; shader: flat"
+        ></a-cursor>
+      </a-camera>
+    </a-scene>
+  </main>
+
+  <script src="js/ar-campus.js"></script>
+</body>
+</html>
