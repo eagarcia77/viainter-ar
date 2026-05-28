@@ -2,15 +2,24 @@
 
 Este paquete añade una experiencia de Realidad Aumentada basada en geolocalización para el mapa del Recinto de San Germán.
 
+## Enlace publicado
+
+- Página de inicio del paquete: `https://eagarcia77.github.io/viainter-ar/`
+- Experiencia AR directa: `https://eagarcia77.github.io/viainter-ar/ar.html`
+- Mapa principal de Vía Inter SG: `https://viaintersg.org/index.html`
+
 ## Archivos principales
 
+- `index.html`: página de inicio del paquete con acceso directo a la experiencia AR.
 - `ar.html`: página principal de realidad aumentada.
 - `css/ar-styles.css`: estilos visuales con colores institucionales.
 - `js/ar-campus.js`: lógica para cargar puntos de interés, calcular distancias y crear etiquetas AR.
 - `data/campus-locations.json`: puntos de interés editables.
 - `snippets/insert-button-index.html`: botón para insertar en el mapa actual.
 - `snippets/blackboard-instructions.html`: instrucciones listas para Blackboard Ultra.
-- `qr/ar-map-qr.png`: código QR que apunta a `https://viaintersg.org/ar.html`.
+- `qr/ar-map-qr.png`: código QR actualizado en formato PNG.
+- `qr/ar-map-qr.svg`: código QR actualizado en formato SVG.
+- `PATCH_NOTES.md`: resumen de los cambios realizados.
 
 ## Requisitos
 
@@ -21,11 +30,11 @@ Este paquete añade una experiencia de Realidad Aumentada basada en geolocalizac
 
 ## Instalación rápida
 
-1. Copia `ar.html`, las carpetas `css`, `js`, `data`, `qr`, `assets` y `snippets` al mismo nivel donde está `index.html`.
-2. Publica los archivos en el dominio actual.
-3. Abre `https://viaintersg.org/ar.html` desde un celular.
-4. Permite cámara y ubicación.
-5. Ajusta `data/campus-locations.json` con las coordenadas exactas de cada edificio.
+1. Publica los archivos en GitHub Pages o en el dominio institucional.
+2. Abre `https://eagarcia77.github.io/viainter-ar/ar.html` desde un celular.
+3. Permite cámara y ubicación.
+4. Ajusta `data/campus-locations.json` con las coordenadas exactas de cada edificio.
+5. Inserta el botón de `snippets/insert-button-index.html` en el mapa principal o en Blackboard Ultra.
 
 ## Cómo editar los puntos de interés
 
@@ -51,7 +60,7 @@ Copia el código de `snippets/insert-button-index.html` y pégalo en la zona don
 
 ## Uso en Blackboard Ultra
 
-Copia el contenido de `snippets/blackboard-instructions.html` en un documento, anuncio, módulo o actividad de Blackboard Ultra. También puedes insertar el QR incluido en `qr/ar-map-qr.png`.
+Copia el contenido de `snippets/blackboard-instructions.html` en un documento, anuncio, módulo o actividad de Blackboard Ultra. También puedes insertar el QR incluido en `qr/ar-map-qr.png` o `qr/ar-map-qr.svg`.
 
 ## Recomendación de prueba
 
