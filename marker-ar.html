@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Mapa AR con Marcador | Vía Inter SG</title>
+  <meta name="description" content="Mapa del campus Vía Inter SG como panel 3D usando AR.js y marcador HIRO." />
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.js"></script>
+  <style>
+    body { margin:0; overflow:hidden; font-family:Arial, Helvetica, sans-serif; }
+    .panel { position:fixed; z-index:10; left:12px; right:12px; top:12px; background:rgba(255,255,255,.92); border:1px solid rgba(0,123,95,.2); border-radius:18px; padding:12px; box-shadow:0 12px 30px rgba(0,0,0,.22); }
+    .panel strong { color:#007B5F; display:block; }
+    .panel span { color:#51635d; font-size:.9rem; }
+    .links { position:fixed; z-index:11; left:12px; bottom:14px; display:flex; gap:10px; flex-wrap:wrap; }
+    .links a { background:#007B5F; color:#fff; text-decoration:none; padding:11px 14px; border-radius:999px; font-weight:800; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <strong>Mapa AR con marcador</strong>
+    <span>Abre o imprime el marcador HIRO, apunta la cámara y verás el mapa del campus como panel 3D.</span>
+  </div>
+  <div class="links">
+    <a href="marker-hiro.html" target="_blank" rel="noopener">Abrir marcador</a>
+    <a href="map-ar.html">Mapa AR sin marcador</a>
+  </div>
+
+  <a-scene embedded vr-mode-ui="enabled:false" renderer="logarithmicDepthBuffer:true; antialias:true; alpha:true" arjs="sourceType: webcam; debugUIEnabled:false;">
+    <a-assets>
+      <img id="campusMap" src="assets/campus-map.svg" crossorigin="anonymous">
+    </a-assets>
+
+    <a-marker preset="hiro" smooth="true" smoothCount="8" smoothTolerance="0.01" smoothThreshold="5">
+      <a-entity position="0 0 0" rotation="-90 0 0">
+        <a-plane src="#campusMap" width="3.6" height="2.28" position="0 0 0" material="transparent:false"></a-plane>
+        <a-cylinder radius="0.055" height="0.35" color="#FED141" position="-1.18 .22 .16"></a-cylinder>
+        <a-cylinder radius="0.055" height="0.35" color="#FED141" position="-.35 .22 .16"></a-cylinder>
+        <a-cylinder radius="0.055" height="0.35" color="#FED141" position=".55 .22 .16"></a-cylinder>
+        <a-cylinder radius="0.055" height="0.35" color="#FED141" position="-.9 -.55 .16"></a-cylinder>
+        <a-cylinder radius="0.055" height="0.35" color="#FED141" position=".65 -.55 .16"></a-cylinder>
+      </a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>

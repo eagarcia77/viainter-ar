@@ -3,129 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vía Inter SG | Mapa AR</title>
-  <meta name="description" content="Acceso a la experiencia de realidad aumentada del mapa Vía Inter SG." />
+  <title>Vía Inter SG | Mapa con Realidad Aumentada</title>
+  <meta name="description" content="Mapa del Recinto de San Germán con experiencias de realidad aumentada: cámara, marcador y GPS." />
   <style>
-    :root {
-      --inter-green: #007B5F;
-      --inter-yellow: #FED141;
-      --text: #14211d;
-      --muted: #51635d;
-      --bg: #f4f8f6;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(254, 209, 65, 0.28), transparent 34rem),
-        linear-gradient(135deg, #ffffff, var(--bg));
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-
-    main {
-      width: min(920px, 100%);
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(0, 123, 95, 0.16);
-      border-radius: 28px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
-      padding: clamp(24px, 5vw, 56px);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(0, 123, 95, 0.1);
-      color: var(--inter-green);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-weight: 800;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 4rem);
-      line-height: 1;
-      margin: 0 0 18px;
-      letter-spacing: -0.04em;
-    }
-
-    p {
-      font-size: 1.08rem;
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    a {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .primary {
-      background: var(--inter-green);
-      color: #ffffff;
-      box-shadow: 0 14px 28px rgba(0, 123, 95, 0.24);
-    }
-
-    .secondary {
-      background: #ffffff;
-      color: var(--inter-green);
-      border: 2px solid rgba(0, 123, 95, 0.22);
-    }
-
-    .note {
-      margin-top: 28px;
-      padding: 16px;
-      border-left: 5px solid var(--inter-yellow);
-      background: rgba(254, 209, 65, 0.16);
-      border-radius: 14px;
-      color: #473a00;
-    }
+    :root { --green:#007B5F; --yellow:#FED141; --text:#14211d; --muted:#51635d; --bg:#f4f8f6; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; font-family:Arial, Helvetica, sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(254,209,65,.28), transparent 34rem), linear-gradient(135deg,#fff,var(--bg)); display:grid; place-items:center; padding:24px; }
+    main { width:min(1040px,100%); background:rgba(255,255,255,.96); border:1px solid rgba(0,123,95,.16); border-radius:28px; box-shadow:0 24px 60px rgba(0,0,0,.12); padding:clamp(24px,5vw,56px); }
+    .badge { display:inline-flex; gap:8px; align-items:center; background:rgba(0,123,95,.1); color:var(--green); border-radius:999px; padding:8px 14px; font-weight:800; font-size:.9rem; margin-bottom:20px; }
+    h1 { font-size:clamp(2rem,6vw,4rem); line-height:1; margin:0 0 18px; letter-spacing:-.04em; }
+    p { font-size:1.08rem; line-height:1.7; color:var(--muted); max-width:840px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:30px; }
+    .card { padding:20px; border:1px solid rgba(0,123,95,.16); border-radius:22px; background:#fff; box-shadow:0 12px 30px rgba(0,0,0,.08); }
+    .card h2 { margin:0 0 8px; color:var(--green); font-size:1.15rem; }
+    .card p { margin:0 0 16px; font-size:.95rem; }
+    a { min-height:46px; display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:999px; font-weight:800; text-decoration:none; }
+    .primary { background:var(--green); color:#fff; box-shadow:0 14px 28px rgba(0,123,95,.24); }
+    .secondary { background:#fff; color:var(--green); border:2px solid rgba(0,123,95,.22); }
+    .yellow { background:var(--yellow); color:#14211d; }
+    .note { margin-top:28px; padding:16px; border-left:5px solid var(--yellow); background:rgba(254,209,65,.16); border-radius:14px; color:#473a00; }
   </style>
 </head>
 <body>
   <main>
     <span class="badge">Realidad Aumentada · Vía Inter SG</span>
-    <h1>Mapa AR del Recinto de San Germán</h1>
-    <p>
-      Esta página abre la experiencia WebAR del mapa Vía Inter SG. Para usarla, accede desde un celular,
-      permite cámara y ubicación, y explora los puntos de interés del recinto mediante etiquetas de realidad aumentada.
-    </p>
-
-    <div class="actions">
-      <a class="primary" href="ar.html">Abrir Mapa AR</a>
-      <a class="secondary" href="https://viaintersg.org/index.html" target="_blank" rel="noopener">Ver mapa principal</a>
-      <a class="secondary" href="qr/ar-map-qr.svg" target="_blank" rel="noopener">Ver QR actualizado</a>
-    </div>
-
-    <p class="note">
-      Recomendación: prueba la experiencia en exteriores para mejorar la precisión del GPS.
-      Las coordenadas de los edificios pueden editarse en <strong>data/campus-locations.json</strong>.
-    </p>
+    <h1>Mapa del Recinto en Realidad Aumentada</h1>
+    <p>Esta versión convierte el mapa en una experiencia AR. Puedes abrir el mapa aumentado sobre la cámara, verlo como panel 3D con marcador o usar la versión GPS con puntos de interés.</p>
+    <section class="cards" aria-label="Opciones de realidad aumentada">
+      <article class="card">
+        <h2>Mapa AR con cámara</h2>
+        <p>Recomendado para Blackboard y orientación virtual. El mapa completo aparece como una capa aumentada sobre el entorno del estudiante.</p>
+        <a class="primary" href="map-ar.html">Abrir mapa AR</a>
+      </article>
+      <article class="card">
+        <h2>Mapa AR con marcador</h2>
+        <p>Usa un marcador HIRO para que el mapa se vea como un panel 3D sobre una mesa o pantalla.</p>
+        <a class="yellow" href="marker-ar.html">Abrir con marcador</a>
+      </article>
+      <article class="card">
+        <h2>GPS AR</h2>
+        <p>Muestra etiquetas por ubicación. Funciona mejor en exteriores y con coordenadas verificadas de los edificios.</p>
+        <a class="secondary" href="ar.html">Abrir GPS AR</a>
+      </article>
+      <article class="card">
+        <h2>Mapa principal</h2>
+        <p>Regresa al mapa web original de Vía Inter SG para búsqueda, categorías y ubicación.</p>
+        <a class="secondary" href="https://viaintersg.org/index.html" target="_blank" rel="noopener">Ver mapa principal</a>
+      </article>
+    </section>
+    <p class="note">Para publicar los cambios, sube estos archivos al repositorio de GitHub Pages. La experiencia requiere HTTPS para activar la cámara.</p>
   </main>
 </body>
 </html>
